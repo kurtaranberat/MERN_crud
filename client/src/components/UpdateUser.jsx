@@ -10,19 +10,20 @@ function UpdateUser() {
     const [age, setAge] = useState()
      
     useEffect(()=> {
-        const fetchData = async() => {
-            try {
-                const response = await axios.get("http://localhost:3001/get/"+id);
-                console.log(response);
-                setName(response.data.name)
-                setEmail(response.data.email)
-                setAge(response.data.age)
-            } catch(err) {
-                console.log(err)
-            }
-        }
-        fetchData();
-    }, [])
+      const fetchData = async() => {
+          try {
+              const response = await axios.get("http://localhost:3001/get/"+id);
+              console.log(response);
+              setName(response.data.name)
+              setEmail(response.data.email)
+              setAge(response.data.age)
+          } catch(err) {
+              console.log(err)
+          }
+      }
+      fetchData();
+    }, [id])
+    
      
     const navigate = useNavigate()
  
